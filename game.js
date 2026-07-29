@@ -1,80 +1,79 @@
-// =========================
-// CARD RUSH
-// Ver 0.01
-// =========================
-
 const titleScreen = document.getElementById("titleScreen");
 const raceScreen = document.getElementById("raceScreen");
-const cardBookScreen = document.getElementById("cardBookScreen");
-const settingScreen = document.getElementById("settingScreen");
 
 const startButton = document.getElementById("startButton");
-const cardBookButton = document.getElementById("cardBookButton");
-const settingButton = document.getElementById("settingButton");
-
-const backButtons = document.querySelectorAll(".backButton");
 
 const courseName = document.getElementById("courseName");
 const horseArea = document.getElementById("horseArea");
 const logArea = document.getElementById("logArea");
-const nextButton = document.getElementById("nextButton");
 
-function hideAllScreens(){
+const courses = [
+"日本ダービー",
+"有馬記念",
+"皐月賞",
+"天皇賞（秋）",
+"ジャパンカップ"
+];
 
-    titleScreen.classList.add("hidden");
-    raceScreen.classList.add("hidden");
-    cardBookScreen.classList.add("hidden");
-    settingScreen.classList.add("hidden");
+const horses = [
 
-}
+"ディープインパクト",
+"オルフェーヴル",
+"イクイノックス",
+"アーモンドアイ",
+"キタサンブラック",
+"ドウデュース",
+"レガレイラ",
+"ナイスネイチャ",
+"ハルウララ",
+"シンボリルドルフ",
+"サイレンススズカ",
+"エルコンドルパサー"
 
-startButton.onclick = function(){
+];
 
-    hideAllScreens();
+startButton.onclick = () => {
 
-    raceScreen.classList.remove("hidden");
+titleScreen.classList.add("hidden");
+raceScreen.classList.remove("hidden");
 
-    courseName.innerHTML = "🏇 コース抽選待ち";
+startRace();
 
-    horseArea.innerHTML =
-    "出走馬を準備しています...";
+};
 
-    logArea.innerHTML =
-    "レース開始ボタンが押されました。";
+function startRace(){
 
-}
+courseName.textContent =
+courses[Math.floor(Math.random()*courses.length)];
 
-cardBookButton.onclick = function(){
+const list=[...horses]
+.sort(()=>Math.random()-0.5)
+.slice(0,8);
 
-    hideAllScreens();
+horseArea.innerHTML="";
 
-    cardBookScreen.classList.remove("hidden");
+list.forEach((horse,index)=>{
 
-}
+horseArea.innerHTML+=`
 
-settingButton.onclick = function(){
+<div class="horse">
 
-    hideAllScreens();
+${index+1}. ${horse}
 
-    settingScreen.classList.remove("hidden");
+</div>
 
-}
-
-backButtons.forEach(function(button){
-
-    button.onclick = function(){
-
-        hideAllScreens();
-
-        titleScreen.classList.remove("hidden");
-
-    }
+`;
 
 });
 
-nextButton.onclick = function(){
+logArea.innerHTML=`
 
-    logArea.innerHTML +=
-    "\n\n▶ 次のフェーズへ（開発中）";
+🏇 出走馬決定！
+
+<br><br>
+
+レース開始ボタン実装予定
+
+`;
 
 }
