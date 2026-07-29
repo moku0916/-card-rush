@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CARD RUSH</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="app">
+
+<header>
+
+<h1>🏇 CARD RUSH</h1>
+
+<p class="subTitle">
+Horse Racing Board Game
+</p>
+
+</header>
+
+<main>
+
+<section id="titleScreen" class="screen">
+
+<h2>メインメニュー</h2>
+
+<button id="startButton">
+🏇 レース開始
+</button>
+
+<button id="cardBookButton">
+📖 カード図鑑
+</button>
+
+<button id="settingButton">
+⚙️ 設定
+</button>
+
+</section>
+
+<section id="raceScreen" class="screen hidden">
+
+<h2 id="courseName">
+コース抽選待ち
+</h2>
+
+<div id="horseArea">
+
+</div>
+
+<div id="logArea">
+
+レース準備中...
+
+</div>
+
+<button id="nextButton">
+次へ
+</button>
+
+</section>
+
+<section id="cardBookScreen" class="screen hidden">
+
+<h2>カード図鑑</h2>
+
+<div id="cardList">
+
+カードはここへ表示されます。
+
+</div>
+
+<button class="backButton">
+← 戻る
+</button>
+
+</section>
+
+<section id="settingScreen" class="screen hidden">
+
+<h2>設定</h2>
+
+<div>
+
+BGM：
+<select>
+<option>ON</option>
+<option>OFF</option>
+</select>
+
+</div>
+
+<div>
+
+演出速度：
+<select>
+<option>普通</option>
+<option>速い</option>
+<option>最速</option>
+</select>
+
+</div>
+
+<button class="backButton">
+← 戻る
+</button>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>
