@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,12 +21,16 @@
 <h1>🏇 CARD RUSH</h1>
 
 <p class="subTitle">
+
 Horse Racing Board Game
+
 </p>
 
 </header>
 
-<main>
+<!-- ========================= -->
+<!-- タイトル画面 -->
+<!-- ========================= -->
 
 <section id="titleScreen" class="screen">
 
@@ -38,17 +44,43 @@ Horse Racing Board Game
 📖 カード図鑑
 </button>
 
+<button id="courseBookButton">
+🏆 コース図鑑
+</button>
+
 <button id="settingButton">
 ⚙️ 設定
 </button>
 
 </section>
 
+<!-- ========================= -->
+<!-- レース画面 -->
+<!-- ========================= -->
+
 <section id="raceScreen" class="screen hidden">
 
 <h2 id="courseName">
-コース抽選待ち
+
+コース抽選中...
+
 </h2>
+
+<div id="raceInfo">
+
+<div id="weather">
+天候：
+</div>
+
+<div id="pace">
+ペース：
+</div>
+
+<div id="phase">
+フェーズ0
+</div>
+
+</div>
 
 <div id="horseArea">
 
@@ -60,65 +92,156 @@ Horse Racing Board Game
 
 </div>
 
+<div id="raceButtons">
+
 <button id="nextButton">
+
 次へ
+
 </button>
+
+<button id="menuButton">
+
+メニュー
+
+</button>
+
+</div>
 
 </section>
 
-<section id="cardBookScreen" class="screen hidden">
+<!-- ========================= -->
+<!-- 馬カード図鑑 -->
+<!-- ========================= -->
 
-<h2>カード図鑑</h2>
+<section id="cardBookScreen"
+
+class="screen hidden">
+
+<h2>
+
+カード図鑑
+
+</h2>
 
 <div id="cardList">
 
-カードはここへ表示されます。
+カードがここに表示されます。
 
 </div>
 
 <button class="backButton">
-← 戻る
+
+←戻る
+
 </button>
 
 </section>
 
-<section id="settingScreen" class="screen hidden">
+<!-- ========================= -->
+<!-- コース図鑑 -->
+<!-- ========================= -->
 
-<h2>設定</h2>
+<section id="courseBookScreen"
 
-<div>
+class="screen hidden">
 
-BGM：
-<select>
+<h2>
+
+GIコース図鑑
+
+</h2>
+
+<div id="courseList">
+
+コースカードがここに表示されます。
+
+</div>
+
+<button class="backButton">
+
+←戻る
+
+</button>
+
+</section>
+
+<!-- ========================= -->
+<!-- 設定 -->
+<!-- ========================= -->
+
+<section id="settingScreen"
+
+class="screen hidden">
+
+<h2>
+
+設定
+
+</h2>
+
+<p>
+
+BGM
+
+<select id="bgm">
+
 <option>ON</option>
+
 <option>OFF</option>
+
 </select>
 
-</div>
+</p>
 
-<div>
+<p>
 
-演出速度：
-<select>
+演出速度
+
+<select id="speed">
+
 <option>普通</option>
+
 <option>速い</option>
+
 <option>最速</option>
+
 </select>
 
-</div>
+</p>
 
 <button class="backButton">
-← 戻る
+
+←戻る
+
 </button>
 
 </section>
 
-</main>
-
 </div>
+
+<!-- メイン -->
 
 <script src="game.js"></script>
+
+<!-- データ -->
+
+<script src="horses.js"></script>
+
+<script src="courses.js"></script>
+
+<!-- エンジン -->
+
 <script src="race.js"></script>
 
+<script src="ability.js"></script>
+
+<script src="event.js"></script>
+
+<script src="odds.js"></script>
+
+<script src="ai.js"></script>
+
 </body>
+
 </html>
